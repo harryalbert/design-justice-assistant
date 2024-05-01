@@ -1,6 +1,6 @@
 "use client";
 
-import {LegacyRef, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 
