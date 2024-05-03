@@ -3,6 +3,7 @@
 import {useEffect, useRef, useState} from "react";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
+import LoadingChatMessage from "./LoadingChatMessage";
 
 export type Chat = {
 	fromUser: boolean;
@@ -10,6 +11,7 @@ export type Chat = {
 };
 
 const ChatWindow = () => {
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [chats, setChats] = useState<Chat[]>([
 		{
 			fromUser: false,
@@ -30,11 +32,17 @@ const ChatWindow = () => {
 					{chats.map((chat, index) => (
 						<ChatMessage key={index} chat={chat} />
 					))}
+					{isLoading && <LoadingChatMessage />}
 					<div ref={messageEndRef} />
 				</div>
 			</div>
 			<div className="flex flex-row justify-center h-[50px] max-h-[100px] m-2 mb-3">
-				<ChatInput chats={chats} setChats={setChats} />
+				<ChatInput
+					chats={chats}
+					setChats={setChats}
+					isLoading={isLoading}
+					setIsLoading={setIsLoading}
+				/>
 			</div>
 		</div>
 	);

@@ -4,6 +4,7 @@
 
 :root {
 	--foreground-rgb: 255, 255, 255;
+	--loading-dot-color: #ff0000;
 }
 
 body {
