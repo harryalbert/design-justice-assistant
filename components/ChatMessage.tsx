@@ -8,7 +8,7 @@ const ChatMessage = ({chat}: {chat: Chat}) => {
 			}`}
 		>
 			<div className="pb-1 text-gray-600">
-				{chat.fromUser ? "you" : "design-justice assistant"}
+				{chat.fromUser ? "you" : "design justice assistant"}
 			</div>
 			<div
 				className={`${
