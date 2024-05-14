@@ -28,7 +28,7 @@ export async function POST(request: Request) {
 			},
 			...formatted_chats,
 		],
-		model: "gpt-4-turbo",
+		model: "gpt-4o",
 	});
 
 	return Response.json({res: completion.choices[0].message.content});
